@@ -10,13 +10,14 @@ public class Homework1 {
      */
     public static void main(String args[]) {
 
-        int n = Integer.parseInt(args[0]);
+        int n = 0;
+        n = Integer.parseInt(args[0]);
         int counter1;
         int counter2;
 
         long startingTime = System.nanoTime();
 
-        int[][] matrix = new int[10][10];
+        int[][] matrix = new int[n + 1][n + 1];
         for (counter1 = 1; counter1 <= n; counter1++) {
             int counter3 = 1;
             for (counter2 = counter1; counter2 <= n; counter2++) {
