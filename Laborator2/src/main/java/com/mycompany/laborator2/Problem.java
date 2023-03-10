@@ -22,21 +22,13 @@ public class Problem {
     private Location destination;
     private Road[] roads;
 
-    /**
-     *
-     * @param start
-     * @param destination
-     * @param roads
-     */
     public Problem(Location start, Location destination, Road[] roads) {
         this.roads = roads;
         this.start = start;
         this.destination = destination;
     }
 
-    /**
-     *
-     */
+
     public Problem() {
 
     }
@@ -45,7 +37,6 @@ public class Problem {
      * A problem is valid if the elements are not null, the destination is not
      * equal to the start and the roads don't repeat.
      *
-     * @return 
      */
     public boolean isValid() {
         if (this.start == null && this.destination == null && this.roads == null) {
@@ -70,10 +61,6 @@ public class Problem {
         }
     }
 
-    /**
-     *
-     * @return
-     */
     public boolean checkRoads() {
         if (this.roads == null) {
             return false;
@@ -90,66 +77,37 @@ public class Problem {
         return true;
     }
 
-    /**
-     *
-     * @return
-     */
     public int populateAccesMap() {
         return 1;
     }
 
-    /**
-     *
-     * @return
-     */
     public Location getStart() {
         return start;
     }
 
-    /**
-     *
-     * @param start
-     */
+
     public void setStart(Location start) {
         this.start = start;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public Location getDestination() {
         return destination;
     }
 
-    /**
-     *
-     * @param destination
-     */
+
     public void setDestination(Location destination) {
         this.destination = destination;
     }
 
-    /**
-     *
-     * @return
-     */
     public Road[] getRoads() {
         return roads;
     }
 
-    /**
-     *
-     * @param roads
-     */
     public void setRoads(Road[] roads) {
         this.roads = roads;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -159,11 +117,6 @@ public class Problem {
         return hash;
     }
 
-    /**
-     *
-     * @param obj
-     * @return
-     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -185,10 +138,6 @@ public class Problem {
         return Arrays.deepEquals(this.roads, other.roads);
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public String toString() {
         return "Problem{start=" + start + ", destination=" + destination + ", roads=" + roads + '}';

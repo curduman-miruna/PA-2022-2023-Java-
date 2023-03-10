@@ -13,11 +13,7 @@ import java.util.Objects;
 public class ShortestPath {
     private Problem problem;
 
-    /**
-     *
-     * @param problem
-     * @return
-     */
+
     public int solveProblem(Problem problem) {
         AlgorithmHelper[] roadHelper = new AlgorithmHelper[3 * problem.getRoads().length];
         int counterRoadHelper = 0;
@@ -109,34 +105,20 @@ public class ShortestPath {
         return shortest;
         }
 
-    /**
-     *
-     * @param problem
-     */
+
     public ShortestPath(Problem problem) {
         this.problem = problem;
     }
 
-    /**
-     *
-     * @return
-     */
     public Problem getProblem() {
         return problem;
     }
 
-    /**
-     *
-     * @param problem
-     */
     public void setProblem(Problem problem) {
         this.problem = problem;
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -144,11 +126,7 @@ public class ShortestPath {
         return hash;
     }
 
-    /**
-     *
-     * @param obj
-     * @return
-     */
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -164,10 +142,7 @@ public class ShortestPath {
         return Objects.equals(this.problem, other.problem);
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public String toString() {
         return "ShortestPath{" + "problem=" + problem + '}';

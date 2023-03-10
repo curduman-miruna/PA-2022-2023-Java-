@@ -16,28 +16,17 @@ public class Location {
     private double x;
     private double y;
 
-    /**
-     *
-     */
+
     public Location() {
     }
 
-    /**
-     *
-     * @param name
-     * @param x
-     * @param y
-     */
+
     public Location(String name, double x, double y) {
         this.name = name;
         this.x = x;
         this.y = y;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -47,11 +36,6 @@ public class Location {
         return hash;
     }
 
-    /**
-     *
-     * @param obj
-     * @return
-     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -73,59 +57,38 @@ public class Location {
         return Objects.equals(this.name, other.name);
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public String toString() {
         return name;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public String getName() {
         return name;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public double getX() {
         return x;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public double getY() {
         return y;
     }
 
-    /**
-     *
-     * @param name
-     */
+
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     *
-     * @param x
-     */
+
     public void setX(double x) {
         this.x = x;
     }
 
-    /**
-     *
-     * @param y
-     */
+
     public void setY(double y) {
         this.y = y;
     }

@@ -10,19 +10,10 @@ package com.mycompany.laborator2;
  */
 public class Country extends Road {
 
-    /**
-     *
-     */
     public Country() {
     }
 
-    /**
-     *
-     * @param Name
-     * @param a
-     * @param b
-     * @param km
-     */
+
     public Country(String Name, Location a, Location b, int km) {
         this.setName(Name);
         this.setA(a);

@@ -18,90 +18,57 @@ public class Road {
     private String type;
     private int kilometers;
 
-    /**
-     *
-     * @return
-     */
+
     public Location getA() {
         return a;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public int getKilometers() {
         return kilometers;
     }
 
-    /**
-     *
-     * @param kilometers = how long the roads is
-     */
+
     public void setKilometers(int kilometers) {
         this.kilometers = kilometers;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public String getType() {
         return type;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public Location getB() {
         return b;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public String getName() {
         return name;
     }
 
-    /**
-     *
-     * @param name = What the road name is
-     */
+
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-     *
-     * @param a = one of the location the roads connects to
-     */
+
     public void setA(Location a) {
         this.a = a;
     }
 
-    /**
-     *
-     * @param b = one of the location the roads connects to
-     */
+
     public void setB(Location b) {
         this.b = b;
     }
 
-    /**
-     *
-     * @param type = type of the road
-     */
+
     public void setType(String type) {
         this.type = type;
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -113,11 +80,7 @@ public class Road {
         return hash;
     }
 
-    /**
-     *
-     * @param obj = are the objects equal
-     * @return
-     */
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -145,10 +108,7 @@ public class Road {
         return Objects.equals(this.b, other.b);
     }
 
-    /**
-     *
-     * @return
-     */
+
     @Override
     public String toString() {
         return "Road{" + "name=" + name + ", a=" + a + ", b=" + b + ", type=" + type + ", kilometers=" + kilometers + '}';

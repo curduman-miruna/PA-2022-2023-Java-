@@ -14,11 +14,6 @@ public class Solution {
 
     private Problem problem;
 
-    /**
-     *
-     * @param problem
-     * @return
-     */
     public boolean solveProblem(Problem problem) {
         AlgorithmHelper[] roadHelper = new AlgorithmHelper[3 * problem.getRoads().length];
         int counterRoadHelper = 0;
@@ -112,40 +107,23 @@ public class Solution {
         return false;
     }
 
-    /**
-     *
-     */
     public Solution() {
     }
 
-    /**
-     *
-     * @param problem
-     */
     public Solution(Problem problem) {
         this.problem = problem;
     }
 
-    /**
-     *
-     * @return
-     */
+
     public Problem getProblem() {
         return problem;
     }
 
-    /**
-     *
-     * @param problem
-     */
+
     public void setProblem(Problem problem) {
         this.problem = problem;
     }
 
-    /**
-     *
-     * @return
-     */
     @Override
     public int hashCode() {
         int hash = 5;
@@ -153,11 +131,6 @@ public class Solution {
         return hash;
     }
 
-    /**
-     *
-     * @param obj
-     * @return
-     */
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

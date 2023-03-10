@@ -9,20 +9,10 @@ package com.mycompany.laborator2;
  * @author Miruna
  */
 public class Highway extends Road{
-    
-    /**
-     *
-     */
+
     public Highway() {
     }
 
-    /**
-     *
-     * @param Name
-     * @param a
-     * @param b
-     * @param km
-     */
     public Highway(String Name, Location a, Location b, int km) {
     this.setName(Name);
     this.setA(a);
