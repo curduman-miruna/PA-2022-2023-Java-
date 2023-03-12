@@ -1,0 +1,10 @@
+An instance of the "Best Route Problem" consists of locations and roads. Locations may be cities, airports, gas stations, etc.
+Two locations may be connected by a road, or not. Roads may be highways, express, country, etc.
+
+Each location has a name, type and x, y coordinates (assume that the locations are placed in a cartesian coordinate system).
+Each road has a type, length and a speed limit. The length of a road should not be less than the euclidian distance between the location coordinates.
+We consider the problem of determining the "best" route from one location to another.
+
+	In proiectul meu Road este superclasa, highways, express, country fiind subclase ale acestei clase. Pentru a vedea daca problema (Problem: A tourist wants to see if it is possible to go from one location to another using the given roads..) este valida (Problem.java) am verificat daca nu are elemente care sa fie null (drumuri si locatii), daca locatia de start nu este egala cu locatia si daca nu are drumuri care se repete. Pentru a rezolva problema am creat clasa Solution, respectiv metoda solveProblem (Solution.java) care va verifica mai intai daca problema este valida, ca apoi sa intoarca true daca exista drum si false daca nu. Pentru a verifica am implementat un Array de AlghorithmHelper (AlghorithmHelper.java), pentru a cunoaste currentLocation și nextLocation (unde am fost si unde voi merge). Algoritmul este de tip Backtracking, mergand pe drumurile pe care le gaseste primele, intorcandu-se in cazul in care nu a ajuns in destinatie (drumurile pe care am mers sunt marcate cu unu in array-ul takenRoads, pentru a nu mai merge pe acolo). Daca in final s-a ajuns la finalul array-ului roads inseamna ca nu am gasit un drum/ nu am rezolvat problema, deci se va returna false. In cazul in care gasea destinatia, va returna true.
+
+	Am incercat sa implementez si cel mai scurt drum folosindu-ma de algoritmul creat mai sus, insa nu compileaza. Ideea era ca atunci cand gaseste drum sa nu returneze true, ci sa caute in continuare drumuri (si sa verifice daca e minim). Cand ajungea la finalul array-ului road, returna distanta minima.
