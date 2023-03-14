@@ -12,8 +12,8 @@ import java.util.Objects;
  *
  * @author Miruna
  */
-public class Network {
-
+public class Network { 
+    
     private List<Node> nodes = new ArrayList<>();
 
     public List<Node> getNodes() {
@@ -54,7 +54,7 @@ public class Network {
     public void addNode(Node node) {
         nodes.add(node);
     }
-
+    
     public Network() {
     }
 

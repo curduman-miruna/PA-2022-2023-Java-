@@ -8,13 +8,9 @@ package com.mycompany.laborator3;
  *
  * @author Miruna
  */
-public interface Node{
+public class Designer extends Person{
     
-    String getName();
-    int getId();
-    void addRelationship(Node node, String relationship);
-    void setWeight(int weight);
-    default int getWeight() {
-        return 0;
-    }
+    private double experience;
+    private String styleDescription;
+    
 }

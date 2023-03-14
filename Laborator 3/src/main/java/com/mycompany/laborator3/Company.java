@@ -15,10 +15,21 @@ public class Company implements Node, Comparable<Company> {
 
     private String name;
     private int id;
+    private int weight;
     private Map<Node, String> relationships = new HashMap<>();
 
     public Map<Node, String> getRelationships() {
         return relationships;
+    }
+
+    @Override
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public int getWeight() {
+        return weight;
     }
 
     public void setRelationships(Map<Node, String> relationships) {
@@ -55,19 +66,18 @@ public class Company implements Node, Comparable<Company> {
     }
 
     @Override
-    public double getWeight() {
-        return Node.super.getWeight();
-    }
-
-    @Override
     public String toString() {
         return "Company{" + "name=" + name + ", id=" + id + ", relationships=" + relationships + '}';
     }
 
     @Override
     public int compareTo(Company other) {
-        return this.name.compareTo(other.name);
-        //what if the name is null?
+        if(this.getWeight()==other.getWeight())
+            return 0;
+        else
+            if(this.getWeight()>other.getWeight())
+                return 1;
+        return -1;
     }
 
 }

@@ -6,6 +6,7 @@ package com.mycompany.laborator3;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.time.LocalDate;
 
 /**
  *
@@ -14,34 +15,32 @@ import java.util.Map;
 public class Person implements Node, Comparable<Person> {
 
     private String name;
+    private LocalDate date;
     private int id;
-    private double weight;
+    private int weight;
     private Map<Node, String> relationships = new HashMap<>();
 
-    public Person(String name, int id, double weight) {
+    public Person() {
+
+    }
+
+    public Person(String name, int id) {
         this.name = name;
         this.id = id;
-        this.weight = weight;
+        this.weight = 0;
     }
 
     @Override
     public void addRelationship(Node node, String value) {
+        this.setWeight(this.getWeight() + 1);
+        node.setWeight(node.getWeight() + 1);
         relationships.put(node, value);
+
     }
 
     @Override
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public int compareTo(Person other) {
-        return this.name.compareTo(other.name);
-        //what if the name is null?
     }
 
     @Override
@@ -50,8 +49,43 @@ public class Person implements Node, Comparable<Person> {
     }
 
     @Override
-    public double getWeight() {
+    public int getWeight() {
         return weight;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Map<Node, String> getRelationships() {
+        return relationships;
+    }
+
+    public void setRelationships(Map<Node, String> relationships) {
+        this.relationships = relationships;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Person other) {
+        if (this.getWeight() == other.getWeight()) {
+            return 0;
+        } else if (this.getWeight() > other.getWeight()) {
+            return 1;
+        }
+        return -1;
     }
 
     @Override
