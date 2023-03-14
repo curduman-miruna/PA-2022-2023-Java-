@@ -16,8 +16,8 @@ public class Laborator3 {
 
     public static void main(String[] args) {
         Person person1 = new Person("Ana", 233);
-        Person person2 = new Person("Maria", 234);
-        Person person3 = new Person("Maria", 234);
+        Node person2 = new Person("Maria", 234);
+        Person person3 = new Person("Crina", 234);
         Company company1 = new Company("Altex", 2344);
         Network network = new Network();
         network.addNode(person1);
