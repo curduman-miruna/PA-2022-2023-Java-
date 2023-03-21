@@ -2,6 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 package com.mycompany.laborator5;
+import java.io.IOException;
 
 /**
  *
@@ -9,13 +10,13 @@ package com.mycompany.laborator5;
  */
 public class Laborator5 {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         Laborator5 app = new Laborator5();
         app.testCreateSave();
         app.testLoadView();
     }
 
-    private void testCreateSave() {
+    private void testCreateSave() throws IOException {
         Catalog catalog
                 = new Catalog("MyDocuments");
         var book = new Document("article1") {};
@@ -23,7 +24,7 @@ public class Laborator5 {
         catalog.add(book);
         catalog.add(article);
 
-        //CatalogUtil.save(catalog, "d:/research/catalog.json");
+        CatalogUtil.save(catalog, "c:/Users/Admin/Documents/GitHub/PA-2022-2023/Laborator5/catalog.json");
     }
 
     private void testLoadView() {

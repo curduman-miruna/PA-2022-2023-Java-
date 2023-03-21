@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author Miruna
  */
-public abstract class Document implements Serializable {
+public class Document implements Serializable {
 
     private String id;
     private String title;
