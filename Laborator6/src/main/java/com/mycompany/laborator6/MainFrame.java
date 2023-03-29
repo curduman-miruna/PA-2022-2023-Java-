@@ -4,42 +4,44 @@
  */
 package com.mycompany.laborator6;
 
+import java.awt.BorderLayout;
 import javax.swing.GroupLayout;
 import static javax.swing.GroupLayout.Alignment.CENTER;
 import javax.swing.JFrame;
 import static javax.swing.SpringLayout.NORTH;
 import static javax.swing.SpringLayout.SOUTH;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
+import javax.swing.border.Border;
 
 /**
  *
  * @author Miruna
  */
 public class MainFrame extends JFrame {
- ConfigPanel configPanel;
- ControlPanel controlPanel;
- DrawingPanel canvas;
 
- public MainFrame() {
- super("My Drawing Application");
- init();
- }
+    ConfigPanel configPanel;
+    ControlPanel controlPanel;
+    DrawingPanel canvas;
 
- private void init() {
- setDefaultCloseOperation(EXIT_ON_CLOSE);
+    public MainFrame() {
+        super("My Drawing Application");
+        init();
+    }
 
- configPanel = new ConfigPanel(this);
- controlPanel= new ControlPanel(this);
- canvas = new DrawingPanel(this);
+    private void init() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
- //arrange the components in the container (frame)
- //JFrame uses a BorderLayout by default
- add(canvas, CENTER); //this is BorderLayout.CENTER
- add(configPanel, NORTH);
- add(controlPanel,SOUTH);
- //...TODO
- 
- //invoke the layout manager
- pack();
- }
+        configPanel = new ConfigPanel(this);
+        controlPanel = new ControlPanel(this);
+        canvas = new DrawingPanel(this);
+        add(canvas, BorderLayout.CENTER); //this is BorderLayout.CENTER
+        add(configPanel, BorderLayout.NORTH);
+        add(controlPanel, BorderLayout.SOUTH);
+        
+        // invoke the layout manager
+        pack();
+
+        // center the frame on the screen
+        setLocationRelativeTo(null);
+    }
 }

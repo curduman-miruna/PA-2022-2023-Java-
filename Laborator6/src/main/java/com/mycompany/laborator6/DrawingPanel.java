@@ -26,6 +26,7 @@ public class DrawingPanel extends JPanel {
     private int numVertices;
     private double edgeProbability;
     private int[] x, y;
+    private int lastX, lastY;
     BufferedImage image; //the offscreen image
     Graphics2D graphics; //the tools needed to draw in the image
 
@@ -40,10 +41,15 @@ public class DrawingPanel extends JPanel {
         setPreferredSize(new Dimension(W, H));
         setBorder(BorderFactory.createEtchedBorder());
         this.addMouseListener(new MouseAdapter() {
-
             @Override
             public void mousePressed(MouseEvent e) {
-                //TODO...
+                lastX = e.getX();
+                lastY = e.getY();
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                graphics.drawLine(lastX, lastY, e.getX(), e.getY());
                 repaint();
             }
         });
@@ -82,11 +88,22 @@ public class DrawingPanel extends JPanel {
     }
 
     private void drawLines() {
-        //...TODO
+        graphics.setColor(Color.BLACK);
+        for (int i = 0; i < numVertices; i++) {
+            for (int j = i + 1; j < numVertices; j++) {
+                double r = Math.random();
+                if (r < edgeProbability) {
+                    graphics.drawLine(x[i], y[i], x[j], y[j]);
+                }
+            }
+        }
     }
 
     private void drawVertices() {
-        //...TODO
+        graphics.setColor(Color.RED);
+        for (int i = 0; i < numVertices; i++) {
+            graphics.fillOval(x[i] - 10, y[i] - 10, 20, 20);
+        }
     }
 
     @Override
