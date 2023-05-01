@@ -17,7 +17,7 @@ public class Database {
     private static final String URL =
             "jdbc:postgresql://localhost:5432/laborator8";
     private static final String USER = "postgres";
-    private static final String PASSWORD = "b1";
+    private static final String PASSWORD = "postgres";
     private static Connection connection = null;
 
     private Database() {

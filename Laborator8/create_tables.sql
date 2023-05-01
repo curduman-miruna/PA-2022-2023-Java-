@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS public.genres
     CONSTRAINT genres_pkey PRIMARY KEY (id)
 );
 
-CREATE TABLE album_genres (
+CREATE TABLE IF NOT EXISTS album_genres (
     album_id INTEGER NOT NULL REFERENCES albums(id),
     genre_id INTEGER NOT NULL REFERENCES genres(id),
     PRIMARY KEY (album_id, genre_id)
