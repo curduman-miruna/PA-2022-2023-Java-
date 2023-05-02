@@ -10,27 +10,32 @@ class TestDatabase {
     private static final String URL = "jdbc:postgresql://localhost:5432/laborator8";
     private static final String USER = "postgres";
     private static final String PASSWORD = "postgres";
-
-    private Database database;
+    private Connection connection;
 
     @BeforeEach
-    void setUp() {
-        database = Database.getInstance();
+    void setUp() throws SQLException {
+        Connection connection = Database.getConnection();
     }
 
     @AfterEach
     void tearDown() throws SQLException {
-        Database.closeConnection();
+        Connection connection = null;
+        try {
+            connection = Database.getConnection();
+            // do something with the connection
+        } catch (SQLException e) {
+            System.err.println(e);
+        } finally {
+            try {
+                Database.closeConnection(connection);
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
     }
 
     @Test
-    void testGetInstance() {
-        assertNotNull(database);
-        assertSame(database, Database.getInstance());
-    }
-
-    @Test
-    void testGetConnection() {
+    void testGetConnection() throws SQLException {
         Connection connection = Database.getConnection();
         assertNotNull(connection);
         assertSame(connection, Database.getConnection());
@@ -40,7 +45,9 @@ class TestDatabase {
     void testCloseConnection() throws SQLException {
         Connection connection = Database.getConnection();
         assertFalse(connection.isClosed());
-        Database.closeConnection();
+
+        Database.closeConnection(connection);
+
         assertTrue(connection.isClosed());
     }
 
