@@ -1,0 +1,6 @@
+com\mycompany\serverapplication\GameServer.class
+com\mycompany\serverapplication\ServerApplication.class
+com\mycompany\serverapplication\Game.class
+com\mycompany\serverapplication\Board.class
+com\mycompany\serverapplication\ClientThread.class
+com\mycompany\serverapplication\Player.class
